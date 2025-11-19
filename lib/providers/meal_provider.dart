@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:http/http.dart' as http;
-import 'package:meals/models/meal.dart';
+import 'package:annapurna/models/meal.dart';
 
 class MealsNotifier extends StateNotifier<List<Meal>> {
   MealsNotifier() : super([]) {
@@ -25,7 +25,7 @@ class MealsNotifier extends StateNotifier<List<Meal>> {
 
         // Decode the JSON response as a List
         final List<dynamic> mealsData = json.decode(response.body);
-         print('Raw API response: ${response.body}');
+        print('Raw API response: ${response.body}');
 
         // Convert the List into a list of Meal objects
         final List<Meal> mealList = mealsData.map((mealData) {

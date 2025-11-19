@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:meals/models/category.dart';
+import 'package:annapurna/models/category.dart';
 
 class CategoryGridItem extends StatelessWidget {
   const CategoryGridItem(
@@ -16,7 +16,7 @@ class CategoryGridItem extends StatelessWidget {
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(35.r), //16
       child: Container(
-        padding:  EdgeInsets.all(35.r), // 16
+        padding: EdgeInsets.all(35.r), // 16
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(35.r), // 16
           gradient: LinearGradient(

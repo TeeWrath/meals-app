@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:meals/providers/auth_controller.dart';
-import 'package:meals/core/routes/app_route_const.dart';
+import 'package:annapurna/providers/auth_controller.dart';
+import 'package:annapurna/core/routes/app_route_const.dart';
 
 class MainDrawer extends ConsumerWidget {
-  const MainDrawer({
-    super.key,
-    required this.onSelectScreen,
-    required this.userName,
-    required this.profileImage
-  });
+  const MainDrawer(
+      {super.key,
+      required this.onSelectScreen,
+      required this.userName,
+      required this.profileImage});
 
   final void Function(String identifier) onSelectScreen;
   final String? userName;
@@ -36,16 +35,16 @@ class MainDrawer extends ConsumerWidget {
               )),
               child: Row(
                 children: [
-                  profileImage != null ?
-                  Image.asset(
-                    profileImage!,
-                    height: 20.h,
-                  ) :
-                  Icon(
-                    Icons.person,
-                    size: 48, // 48
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
+                  profileImage != null
+                      ? Image.asset(
+                          profileImage!,
+                          height: 20.h,
+                        )
+                      : Icon(
+                          Icons.person,
+                          size: 48, // 48
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                   SizedBox(
                     width: 5.h, // 18
                   ),
@@ -67,7 +66,7 @@ class MainDrawer extends ConsumerWidget {
               'Meals',
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
-                    fontSize: 50.sp,//24
+                    fontSize: 50.sp, //24
                   ),
             ),
             onTap: () {

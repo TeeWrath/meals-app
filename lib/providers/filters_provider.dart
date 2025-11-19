@@ -1,8 +1,8 @@
 // providers/filters_provider.dart
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
-import 'package:meals/models/meal.dart';
-import 'package:meals/providers/meal_provider.dart';
+import 'package:annapurna/models/meal.dart';
+import 'package:annapurna/providers/meal_provider.dart';
 
 enum Filter { glutenFree, lactoseFree, vegetarian, vegan }
 
@@ -41,7 +41,7 @@ final filtersProvider =
 final filteredMealsProvider = Provider<List<Meal>>((ref) {
   final meals = ref.watch(mealProvider);
   final activeFilters = ref.watch(filtersProvider);
-  
+
   print("Total meals fetched: ${meals.length}");
   print("Active filters: $activeFilters");
 

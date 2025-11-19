@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:meals/models/meal.dart';
-import 'package:meals/providers/meal_provider.dart';
-import 'package:meals/providers/categories_provider.dart';
+import 'package:annapurna/models/meal.dart';
+import 'package:annapurna/providers/meal_provider.dart';
+import 'package:annapurna/providers/categories_provider.dart';
 
 class AddMealScreen extends ConsumerStatefulWidget {
   const AddMealScreen({super.key});

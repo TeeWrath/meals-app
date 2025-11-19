@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:meals/models/meal.dart';
-import 'package:meals/core/widgets/meal_item.dart';
+import 'package:annapurna/models/meal.dart';
+import 'package:annapurna/core/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget {
   const MealsScreen({super.key, this.title, required this.meals});

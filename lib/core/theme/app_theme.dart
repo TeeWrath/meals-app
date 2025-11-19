@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:meals/core/theme/colors.dart';
+import 'package:annapurna/core/theme/colors.dart';
 
 class AppTheme {
   static ThemeData light() {

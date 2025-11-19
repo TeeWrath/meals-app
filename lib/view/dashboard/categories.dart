@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:meals/providers/filters_provider.dart';
-import 'package:meals/providers/categories_provider.dart';
-import 'package:meals/models/category.dart';
-import 'package:meals/models/meal.dart';
-import 'package:meals/view/meal/meals.dart';
-import 'package:meals/core/widgets/category_grid_item.dart';
+import 'package:annapurna/providers/filters_provider.dart';
+import 'package:annapurna/providers/categories_provider.dart';
+import 'package:annapurna/models/category.dart';
+import 'package:annapurna/models/meal.dart';
+import 'package:annapurna/view/meal/meals.dart';
+import 'package:annapurna/core/widgets/category_grid_item.dart';
 
 class CategoriesScreen extends ConsumerStatefulWidget {
   const CategoriesScreen({super.key});
@@ -37,11 +37,12 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen>
     super.dispose();
   }
 
-  void _selectCategory(BuildContext context, Category category, List<Meal> availableMeals) {
+  void _selectCategory(
+      BuildContext context, Category category, List<Meal> availableMeals) {
     final filteredMeals = availableMeals
         .where((meal) => meal.categories.contains(category.id))
         .toList();
-        
+
     Navigator.push(
         context,
         MaterialPageRoute(
@@ -55,7 +56,7 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen>
   Widget build(BuildContext context) {
     final availableMeals = ref.watch(filteredMealsProvider);
     final categories = ref.watch(availableCategoriesProvider);
-    
+
     return AnimatedBuilder(
         animation: _animationController,
         child: categories.isEmpty
@@ -66,20 +67,27 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen>
                     Icon(
                       Icons.fastfood,
                       size: 64.sp,
-                      color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
+                      color: Theme.of(context)
+                          .colorScheme
+                          .onSurface
+                          .withOpacity(0.5),
                     ),
                     SizedBox(height: 16.h),
                     Text(
                       'No categories available',
-                      style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                            color: Theme.of(context).colorScheme.onSurface,
-                          ),
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: Theme.of(context).colorScheme.onSurface,
+                              ),
                     ),
                     SizedBox(height: 8.h),
                     Text(
                       'Add some meals to see categories',
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onSurface
+                                .withOpacity(0.7),
                           ),
                     ),
                   ],

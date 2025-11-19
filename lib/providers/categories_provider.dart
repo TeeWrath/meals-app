@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:http/http.dart' as http;
-import 'package:meals/models/category.dart';
-import 'package:meals/providers/meal_provider.dart';
+import 'package:annapurna/models/category.dart';
+import 'package:annapurna/providers/meal_provider.dart';
 
 class CategoriesNotifier extends StateNotifier<List<Category>> {
   CategoriesNotifier() : super([]) {
@@ -17,7 +17,7 @@ class CategoriesNotifier extends StateNotifier<List<Category>> {
     final url = Uri.parse('$baseUrl/categories');
     try {
       final response = await http.get(url);
-      
+
       if (response.statusCode == 200) {
         if (response.body.isEmpty || response.body == 'null') {
           state = [];
@@ -32,7 +32,8 @@ class CategoriesNotifier extends StateNotifier<List<Category>> {
         state = categoryList;
         return categoryList;
       } else {
-        print('Error fetching categories: ${response.statusCode} - ${response.body}');
+        print(
+            'Error fetching categories: ${response.statusCode} - ${response.body}');
         return [];
       }
     } catch (e) {
@@ -43,11 +44,13 @@ class CategoriesNotifier extends StateNotifier<List<Category>> {
 
   Future<Category?> getCategoryById(String id) async {
     final categories = state;
-    return categories.firstWhere((category) => category.id == id, orElse: () => throw Exception('Category not found'));
+    return categories.firstWhere((category) => category.id == id,
+        orElse: () => throw Exception('Category not found'));
   }
 }
 
-final categoryProvider = StateNotifierProvider<CategoriesNotifier, List<Category>>((ref) {
+final categoryProvider =
+    StateNotifierProvider<CategoriesNotifier, List<Category>>((ref) {
   return CategoriesNotifier();
 });
 
@@ -55,17 +58,17 @@ final categoryProvider = StateNotifierProvider<CategoriesNotifier, List<Category
 final availableCategoriesProvider = Provider<List<Category>>((ref) {
   final meals = ref.watch(mealProvider);
   final allCategories = ref.watch(categoryProvider);
-  
+
   if (meals.isEmpty || allCategories.isEmpty) {
     return allCategories;
   }
-  
+
   // Get all unique category IDs from meals
   final Set<String> usedCategoryIds = {};
   for (final meal in meals) {
     usedCategoryIds.addAll(meal.categories);
   }
-  
+
   // Return only categories that are actually used in meals
   return allCategories
       .where((category) => usedCategoryIds.contains(category.id))

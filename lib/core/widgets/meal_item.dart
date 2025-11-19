@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:meals/models/meal.dart';
-import 'package:meals/view/meal/meal_detail.dart';
-import 'package:meals/core/widgets/meal_item_trait.dart';
+import 'package:annapurna/models/meal.dart';
+import 'package:annapurna/view/meal/meal_detail.dart';
+import 'package:annapurna/core/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MealItem extends StatelessWidget {
@@ -58,8 +58,8 @@ class MealItem extends StatelessWidget {
                 right: 0,
                 child: Container(
                   color: Colors.black54,
-                  padding:
-                      EdgeInsets.symmetric(vertical: 2.h, horizontal: 20.w), // 6,44
+                  padding: EdgeInsets.symmetric(
+                      vertical: 2.h, horizontal: 20.w), // 6,44
                   child: Column(
                     children: [
                       Text(
