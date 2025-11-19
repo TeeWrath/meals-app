@@ -53,11 +53,11 @@ class MealDetailScreen extends ConsumerWidget {
                   height: 300.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => Container(
-                    height: 300.h,
+                  errorBuilder: (context, error, stackTrace) => Image.asset(
+                    'assets/logo.png',
+                    height: 100.h,
                     width: double.infinity,
-                    color: Colors.grey[300],
-                    child: Icon(Icons.fastfood, size: 50.sp),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
