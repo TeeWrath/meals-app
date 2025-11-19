@@ -1,3 +1,4 @@
+import 'package:annapurna/view/auth/auth_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:annapurna/core/routes/app_route_const.dart';
@@ -13,6 +14,11 @@ class MyAppRoutes {
   static GoRouter returnRouter() {
     GoRouter routes = GoRouter(
       routes: [
+        GoRoute(
+          path: RoutePath.authWrapper,
+          name: Routes.authWrapper,
+          pageBuilder: (context, state) => MaterialPage(child: AuthWrapper()),
+        ),
         GoRoute(
           name: Routes.splash,
           path: RoutePath.splash,

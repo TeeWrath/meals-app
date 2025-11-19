@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:annapurna/providers/auth_controller.dart';
+import 'package:annapurna/providers/auth_provider.dart';
 import 'package:annapurna/core/routes/app_route_const.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -25,7 +25,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   }
 
   void loginUser() async {
-    final auth = ref.read(authProvider.notifier);
+    final auth = ref.read(authProvider);
     final FirebaseFirestore core = FirebaseFirestore.instance;
 
     // Attempt login
@@ -63,7 +63,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isLoading = ref.watch(authProvider);
+    final isLoading = ref.watch(authProvider).isLoading;
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.onSurface,
       appBar: AppBar(

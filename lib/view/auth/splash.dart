@@ -21,7 +21,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
 
   void _navigatetohome() async {
     await Future.delayed(const Duration(milliseconds: 3000), () {});
-    context.go(RoutePath.signup);
+    // context.go(RoutePath.signup);
   }
 
   @override

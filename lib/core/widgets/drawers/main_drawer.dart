@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:annapurna/providers/auth_controller.dart';
+import 'package:annapurna/providers/auth_provider.dart';
 import 'package:annapurna/core/routes/app_route_const.dart';
 
 class MainDrawer extends ConsumerWidget {
@@ -18,7 +18,7 @@ class MainDrawer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth = ref.read(authProvider.notifier);
+    final auth = ref.read(authProvider);
     return Drawer(
       child: Column(
         children: [

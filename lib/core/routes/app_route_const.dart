@@ -1,4 +1,5 @@
 class Routes {
+  static const String authWrapper = 'wrapper';
   static const String splash = 'splash';
   static const String signup = 'signup';
   static const String login = 'login';
@@ -11,7 +12,8 @@ class Routes {
 }
 
 class RoutePath {
-  static const String splash = '/';
+  static const String authWrapper = '/';
+  static const String splash = '/splash';
   static const String signup = '/signup';
   static const String login = '/login';
   static const String tabs = '/tabs';
