@@ -1,14 +1,14 @@
-import 'package:annapurna/view/auth/auth_wrapper.dart';
+import 'package:annapurna/pages/auth/auth_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:annapurna/core/routes/app_route_const.dart';
-import 'package:annapurna/view/dashboard/categories.dart';
-import 'package:annapurna/view/settings/filters.dart';
-import 'package:annapurna/view/auth/login.dart';
-import 'package:annapurna/view/auth/signup.dart';
-import 'package:annapurna/view/auth/splash.dart';
-import 'package:annapurna/view/dashboard/tabs.dart';
-import 'package:annapurna/view/meal/add_meal_screen.dart';
+import 'package:annapurna/pages/dashboard/categories.dart';
+import 'package:annapurna/pages/settings/filters.dart';
+import 'package:annapurna/pages/auth/login.dart';
+import 'package:annapurna/pages/auth/signup.dart';
+import 'package:annapurna/pages/auth/splash.dart';
+import 'package:annapurna/pages/dashboard/tabs.dart';
+import 'package:annapurna/pages/meal/add_meal_screen.dart';
 
 class MyAppRoutes {
   static GoRouter returnRouter() {

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:annapurna/core/routes/app_route_const.dart';
 import 'package:go_router/go_router.dart';
 import 'package:annapurna/providers/meal_provider.dart';
-import 'package:annapurna/view/dashboard/categories.dart';
-import 'package:annapurna/view/meal/meals.dart';
+import 'package:annapurna/pages/dashboard/categories.dart';
+import 'package:annapurna/pages/meal/meals.dart';
 import 'package:annapurna/core/widgets/drawers/main_drawer.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:annapurna/providers/favorites_provider.dart';
-import 'package:annapurna/view/meal/add_meal_screen.dart';
+import 'package:annapurna/pages/meal/add_meal_screen.dart';
 
 class TabsScreen extends ConsumerStatefulWidget {
   const TabsScreen({super.key, required this.userName});

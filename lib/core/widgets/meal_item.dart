@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:annapurna/models/meal.dart';
-import 'package:annapurna/view/meal/meal_detail.dart';
+import 'package:annapurna/pages/meal/meal_detail.dart';
 import 'package:annapurna/core/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 

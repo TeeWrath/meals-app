@@ -1,8 +1,8 @@
 import 'package:annapurna/core/utils/enums.dart';
 import 'package:annapurna/providers/auth_provider.dart';
-import 'package:annapurna/view/auth/login.dart';
-import 'package:annapurna/view/auth/splash.dart';
-import 'package:annapurna/view/dashboard/tabs.dart';
+import 'package:annapurna/pages/auth/login.dart';
+import 'package:annapurna/pages/auth/splash.dart';
+import 'package:annapurna/pages/dashboard/tabs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

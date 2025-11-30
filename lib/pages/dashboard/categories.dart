@@ -5,7 +5,7 @@ import 'package:annapurna/providers/filters_provider.dart';
 import 'package:annapurna/providers/categories_provider.dart';
 import 'package:annapurna/models/category.dart';
 import 'package:annapurna/models/meal.dart';
-import 'package:annapurna/view/meal/meals.dart';
+import 'package:annapurna/pages/meal/meals.dart';
 import 'package:annapurna/core/widgets/category_grid_item.dart';
 
 class CategoriesScreen extends ConsumerStatefulWidget {
